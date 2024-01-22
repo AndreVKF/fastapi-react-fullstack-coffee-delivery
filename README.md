@@ -1,6 +1,6 @@
 # Lupet's Coffee Delivery
 
-Fullstack application of a Coffee Delivery Service. Create a user and order one, or more, varieties of your favorito coffee.
+Fullstack application of a Coffee Delivery Service. Create a user and order one, or more, varieties of your favorite coffee.
 
 ## Access Link
 
