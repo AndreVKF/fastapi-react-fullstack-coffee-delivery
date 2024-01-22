@@ -1,0 +1,107 @@
+** Async/Await **
+=> Third parties that use await => async def
+=> Third parties that communicates with (database, API, file system, etc...) and doesn't support await => def
+=> Application that doesn't communicate with nothing => async def
+=> On doubt => def
+
+* Order matters when creating resources => First to find will be matched
+* Union is not used by FastAPI
+* None makes parameter to be not required
+* Annotated used to set more metadata => validation
+
+from fastapi import Path, Query, Body, Form, File, UploadFile => Set validation and metadata for Path, Query or Body params
+|-> use it with => from typing import Annotated
+|-> more than one body param => will use the parameter names as keys (field names) in the body, expect a json items with keys
+
+** Pydantic **
+-> Create body request types => extended from the BaseModel
+-> Field => add metadata and validation
+
+** Response Model - Return Type **
+|-> annotate the return type of function
+|-> use response_model on the path operation => e.g.: @app.get() => this way can reuse classes
+
+
+The input model needs to be able to have a password.
+The output model should not have a password.
+The database model would probably need to have a hashed password.
+
+** Error Handling **
+-> Use HTTPException => from fastapi import HTTPException
+
+** Dependency Injection **
+|-> from fastapi import Depends
+|-> Declare the dependency, in the "dependant"
+|-> Annotated[<return>, Depends(common_parameters)]
+|-> CommonsDep = Annotated[dict, Depends(common_parameters)]
+
+The simplicity of the dependency injection system makes FastAPI compatible with:
+    * all the relational databases
+    * NoSQL databases
+    * external packages
+    * external APIs
+    * authentication and authorization systems
+    * API usage monitoring systems
+    * response data injection systems
+    * etc.
+
+FastAPI supports dependencies that do some extra steps after finishing.
+To do this, use yield instead of return, and write the extra steps (code) after.
+
+** Security **
+from fastapi.security import OAuth2PasswordBearer
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+
+
+** Misc Imports **
+To use EmailStr, first install email_validator.
+
+E.g. pip install email-validator or pip install pydantic[email].
+
+To use forms, first install python-multipart.
+
+E.g. pip install python-multipart.
+
+To receive uploaded files, first install python-multipart.
+
+E.g. pip install python-multipart.
+
+This is because uploaded files are sent as "form data".
+
+To receive uploaded files and/or form data, first install python-multipart.
+
+E.g. pip install python-multipart.
+
+from fastapi.encoders import jsonable_encoder => returns a JSON compatible data version based on a dict
+
+Using Pydantic's exclude_unset parameter¶
+If you want to receive partial updates, it's very useful to use the parameter exclude_unset in Pydantic's model's .model_dump().
+
+Like item.model_dump(exclude_unset=True).
+
+Install python-jose¶
+We need to install python-jose to generate and verify the JWT tokens in Python:
+
+pip install "python-jose[cryptography]"
+
+Python-jose requires a cryptographic backend as an extra.
+
+Here we are using the recommended one: pyca/cryptography.
+
+Install passlib¶
+PassLib is a great Python package to handle password hashes.
+
+It supports many secure hashing algorithms and utilities to work with them.
+
+The recommended algorithm is "Bcrypt".
+
+So, install PassLib with Bcrypt:
+
+pip install "passlib[bcrypt]"
+
+Pydantic Settings¶
+Fortunately, Pydantic provides a great utility to handle these settings coming from environment variables with Pydantic: Settings management.
+
+Install pydantic-settings¶
+First, install the pydantic-settings package:
