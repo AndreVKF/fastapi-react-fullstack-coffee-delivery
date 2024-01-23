@@ -8,11 +8,12 @@ import { textM } from '../styles/themes/typography'
 import { formatNumberToCurrency } from '../utils/formatNumberToCurrency'
 import { CartProduct, useCartContext } from '../contexts/CartContext'
 import { useEffect, useState } from 'react'
+import { imageMapping } from '../utils/imageMapping'
 
 export const PurchaseConfirmationCard = (cartProduct: CartProduct) => {
   const { id, image_url, price, quantity, name, description } = cartProduct
+  const image = imageMapping(image_url)
 
-  const [image, setImage] = useState('')
   const [cartQuantity, setCartQuantity] = useState(quantity)
   const { updateItemFromCart, removeItemFromCart } = useCartContext()
 
@@ -40,10 +41,6 @@ export const PurchaseConfirmationCard = (cartProduct: CartProduct) => {
 
     updateItemFromCart(id, cartQuantity)
   }, [quantity, cartQuantity, updateItemFromCart, id])
-
-  useEffect(() => {
-    import(image_url).then((image) => setImage(image.default))
-  }, [image_url])
 
   return (
     <PurchaseConfirmationCardContainer>

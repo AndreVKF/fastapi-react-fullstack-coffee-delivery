@@ -12,17 +12,19 @@ import {
 import { ButtonAddToCart } from './ButtonAddToCart'
 import { ProductProps } from '../@types/product'
 import { formatNumberToCurrency } from '../utils/formatNumberToCurrency'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { CartProduct, useCartContext } from '../contexts/CartContext'
 import { toast } from 'react-toastify'
+import { imageMapping } from '../utils/imageMapping'
 
 export const PurchaseCard = (product: ProductProps) => {
   const [purchaseQtt, setPurchaseQtt] = useState(1)
-  const [image, setImage] = useState('')
   const { addItemToCart } = useCartContext()
 
   const { image_url, description, name, price, tags } = product
   const [prefix, adjustedPrice] = formatNumberToCurrency(price).split(/\s/)
+
+  const image = imageMapping(image_url)
 
   function handleAddPurchaseQtt() {
     const newPurchaseQtt = purchaseQtt + 1
@@ -44,10 +46,6 @@ export const PurchaseCard = (product: ProductProps) => {
     addItemToCart(newCartItem)
     toast.success('Item adicionado')
   }
-
-  useEffect(() => {
-    import(image_url).then((image) => setImage(image.default))
-  }, [image_url])
 
   return (
     <CoffeeCardContainer>

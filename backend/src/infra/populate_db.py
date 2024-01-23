@@ -7,42 +7,42 @@ from src.models.products import Products
 INSERT_TAGS = ['TRADICIONAL', 'GELADO', 'COM LEITE', 'ESPECIAL', 'ALCOÓLICO']
 INSERT_PRODUCTS = [
     {
-        "image_url": '../assets/images/items/expresso.svg',
+        "image_url": 'expresso',
         "name": 'Expresso Tradicional',
         "description": 'O tradicional café feito com água quente e grãos moídos',
         "tags": ['TRADICIONAL'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/americano.svg',
+        "image_url": 'americano',
         "name": 'Expresso Americano',
         "description": 'Expresso diluído, menos intenso que o tradicional',
         "tags": ['TRADICIONAL'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/expresso_cremoso.svg',
+        "image_url": 'expressoCremoso',
         "name": 'Expresso Cremoso',
         "description": 'Café expresso tradicional com espuma cremosa',
         "tags": ['TRADICIONAL'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/cafe_gelado.svg',
+        "image_url": 'cafeGelado',
         "name": 'Expresso Gelado',
         "description": 'Bebida preparada com café expresso e cubos de gelo',
         "tags": ['TRADICIONAL', 'GELADO'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/cafe_com_leite.svg',
+        "image_url": 'cafeComLeite',
         "name": 'Café com Leite',
         "description": 'Meio a meio de expresso tradicional com leite vaporizado',
         "tags": ['TRADICIONAL', 'COM LEITE'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/latte.svg',
+        "image_url": 'latte',
         "name": 'Latte',
         "description":
         'Uma dose de café expresso com o dobro de leite e espuma cremosa',
@@ -50,7 +50,7 @@ INSERT_PRODUCTS = [
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/capuccino.svg',
+        "image_url": 'capuccino',
         "name": 'Capuccino',
         "description":
         'Bebida com canela feita de doses iguais de café, leite e espuma',
@@ -58,7 +58,7 @@ INSERT_PRODUCTS = [
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/macchiato.svg',
+        "image_url": 'macchiato',
         "name": 'Macchiato',
         "description":
         'Café expresso misturado com um pouco de leite quente e espuma',
@@ -66,14 +66,14 @@ INSERT_PRODUCTS = [
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/mochaccino.svg',
+        "image_url": 'mochaccino',
         "name": 'Mocaccino',
         "description": 'Café expresso com calda de chocolate, pouco leite e espuma',
         "tags": ['TRADICIONAL', 'COM LEITE'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/chocolate_quente.svg',
+        "image_url": 'chocolateQuente',
         "name": 'Chocolate Quente',
         "description":
         'Bebida feita com chocolate dissolvido no leite quente e café',
@@ -81,7 +81,7 @@ INSERT_PRODUCTS = [
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/cubano.svg',
+        "image_url": 'cubano',
         "name": 'Cubano',
         "description":
         'Drink gelado de café expresso com rum, creme de leite e hortelã',
@@ -89,21 +89,21 @@ INSERT_PRODUCTS = [
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/havaiano.svg',
+        "image_url": 'havaiano',
         "name": 'Havaiano',
         "description": 'Bebida adocicada preparada com café e leite de coco',
         "tags": ['ESPECIAL'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/arabe.svg',
+        "image_url": 'arabe',
         "name": 'Árabe',
         "description": 'Bebida preparada com grãos de café árabe e especiarias',
         "tags": ['ESPECIAL'],
         "price": 9.9,
     },
     {
-        "image_url": '../assets/images/items/irlandes.svg',
+        "image_url": 'irlandes',
         "name": 'Irlandês',
         "description": 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
         "tags": ['ESPECIAL', 'ALCOÓLICO'],

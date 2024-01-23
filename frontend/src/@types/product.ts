@@ -1,3 +1,5 @@
+import { CoffeTypes } from '../utils/imageMapping'
+
 interface TagProps {
   id: string
   tag: string
@@ -5,7 +7,7 @@ interface TagProps {
 
 export interface ProductProps {
   id: number
-  image_url: string
+  image_url: CoffeTypes
   name: string
   description: string
   tags: TagProps[]
