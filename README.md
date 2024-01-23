@@ -4,6 +4,13 @@ Fullstack application of a Coffee Delivery Service. Create a user and order one,
 
 ## Access Link
 
+https://lupetcoffee.netlify.app/
+
+Login:
+- email: user@user.com
+- password: user1234
+
+(or register a new user)
 
 ## Functionalities
 
@@ -13,9 +20,12 @@ Fullstack application of a Coffee Delivery Service. Create a user and order one,
 - Cart reducer in order to keep track of cart state (Add/Remove items from cart);
 - User history of orders;
 - Address autofill with PoBox insert;
-- 
+
+
 ## Stacks
 
 **Front-end:** React, React-Hooks, TypeScript, Vite, Phosphor-Icons, Styled-Js, React-Router-Dom, Toast
 
-**Back-end:** Python, FastAPI, Database ORM, Models/Schemas, Repository Pattern, Abstract Classes (ABC)
+**Back-end:** Python, FastAPI, Database ORM, SQL, Models/Schemas, Repository Pattern, Abstract Classes (ABC)
+
+**Deploy:** Front-end (netlify), Back-end (fly.io)
