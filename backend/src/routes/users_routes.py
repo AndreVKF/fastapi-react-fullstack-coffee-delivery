@@ -8,6 +8,7 @@ from src.security.authenticate import get_user_id_from_token
 from src.use_cases.create_user import CreateUser
 from src.use_cases.get_user_by_id import GetUserById
 from src.errors.authentication_error import authenticationError
+from src.errors.resource_not_found_error import resourceNotFoundError
 
 router = APIRouter(
     prefix="/users",
@@ -22,6 +23,9 @@ def index(userId: Annotated[UUID, Path()], authUserId: Annotated[str, Depends(ge
     
     _GetUserById = GetUserById(UserRepository=SqlUserRepository)
     user = _GetUserById.execute(userId=userId)
+    
+    if user is None:
+        resourceNotFoundError() 
     
     return user
 

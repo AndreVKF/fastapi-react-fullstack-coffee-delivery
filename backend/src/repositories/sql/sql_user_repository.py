@@ -17,17 +17,11 @@ class SqlUserRepository(UserRepository):
         with Session(bind=self.engine) as session:
             user = session.query(Users).filter(Users.id == userId).first()
         
-        if user is None:
-            authenticationError()
-        
         return user
     
     def getUserByEmail(self, email: EmailStr):
         with Session(bind=self.engine) as session:
             user = session.query(Users).filter(Users.email == email).first()
-        
-        if user is None:
-            authenticationError()
         
         return user
     
