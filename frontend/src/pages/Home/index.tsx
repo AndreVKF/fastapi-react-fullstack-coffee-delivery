@@ -25,7 +25,7 @@ export function Home() {
     if (!isAuthenticated) return
 
     api
-      .get('/products')
+      .get('/products/')
       .then((res: AxiosResponse) => {
         setProducts(res.data)
       })

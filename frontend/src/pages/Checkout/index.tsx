@@ -112,7 +112,7 @@ export function Checkout() {
     }
 
     api
-      .post('/purchases', data)
+      .post('/purchases/', data)
       .then((res: AxiosResponse) => {
         const purchaseId = res.data.id
 

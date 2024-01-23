@@ -62,7 +62,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
   function handleLogin({ email, password }: HandleLoginProps) {
     api
-      .post('/auth', {
+      .post('/auth/', {
         email,
         password,
       })
@@ -82,7 +82,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
   function handleRegister({ username, email, password }: HandleRegisterProps) {
     api
-      .post('/users', {
+      .post('/users/', {
         username,
         email,
         password,
